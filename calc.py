@@ -20,7 +20,13 @@ class Calculator:
         if b == 0:
             return "Error: Division by zero"
         return np.remainder(a, b)
-
+    
+    def checker(self, number):
+        if number % 2 == 0:
+            return "Number is even"
+        else: 
+            return "Number is odd"
+        
 # Function that interacts with the user 
 #create object
 def main():
@@ -39,6 +45,7 @@ def main():
     print(" *  for Multiplication")
     print(" /  for Division")
     print(" %  for Remainder")
+    print ("@ for Chcker")
 
     op = input("Enter operation symbol: ")
 
@@ -52,6 +59,10 @@ def main():
         result = calc.divide(a, b)
     elif op == "%":
         result = calc.remainder(a, b)
+    elif op== "@":
+        number = float(input("Enter the number you want to check even or odd: "))
+        result= calc.checker(number)
+        
     else:
         result = "Invalid operation."
 
